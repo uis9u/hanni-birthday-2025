@@ -4,5 +4,10 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [tailwindcss()],
+  css: {
+    postcss: {
+      plugins: [tailwindcss()],
+    },
+  },
   base: "./",
 });
