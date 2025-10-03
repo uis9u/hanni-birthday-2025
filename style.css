@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "pixel-operator";
+  src: url("/fonts/PixelOperator.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@layer base {
+  html,
+  body {
+    @apply m-0 p-0 h-full font-[pixel-operator];
+  }
+}
+
+@layer utilities {
+  /* モバイル用 (max-width: 767px) */
+  @media (max-width: 767px) {
+    body {
+      @apply block  h-[100dvh] bg-cover bg-no-repeat;
+      background-image: url("/images/background.jpeg");
+    }
+    .sorry {
+      @apply hidden;
+    }
+  }
+
+  /* PC用 (min-width: 768px) */
+  @media (min-width: 768px) {
+    .content {
+      @apply hidden;
+    }
+    .sorry {
+      @apply block;
+    }
+  }
+}
